@@ -1,0 +1,37 @@
+{
+  "name": "road-trip-booking-platform-main",
+  "version": "1.0.0",
+  "description": "Car Rental Platform with Frontend and Backend",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix server\"",
+    "install-all": "npm install && npm install --prefix frontend && npm install --prefix server"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react-swc": "^4.3.0",
+    "concurrently": "^9.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mahidharchowdary2004/Online-Car-Rental.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mahidharchowdary2004/Online-Car-Rental/issues"
+  },
+  "homepage": "https://github.com/Mahidharchowdary2004/Online-Car-Rental#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.4.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "vite": "^8.0.4"
+  }
+}
