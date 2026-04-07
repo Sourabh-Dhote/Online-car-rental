@@ -4,6 +4,7 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const path = require('path');
 const fs = require('fs');
+require('dotenv').config();
 
 const app = express();
 
@@ -22,7 +23,8 @@ if (fs.existsSync(frontendPath)) {
 }
 
 // MongoDB connection here you should change the URI to your MongoDB connection string
-const MONGODB_URI = 'mongodb+srv://nallapanenimahidhar2004:LpmwoYdr4euwYEyX@cluster0.oclfqi3.mongodb.net/carRental?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGO_URI;
+console.log("MONGO_URI =", MONGODB_URI); 
 // keep your MongoDB URI secure and do not expose it in public repositories
 
 mongoose.connect(MONGODB_URI, {

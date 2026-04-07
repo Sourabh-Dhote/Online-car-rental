@@ -29,46 +29,46 @@ const Register = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
+  e.preventDefault();
+  setIsLoading(true);
 
-    if (formData.password !== formData.confirmPassword) {
-      toast({
-        title: "Password mismatch",
-        description: "Passwords do not match. Please try again.",
-        variant: "destructive"
-      });
-      setIsLoading(false);
-      return;
-    }
+  if (formData.password !== formData.confirmPassword) {
+    toast({
+      title: "Password mismatch",
+      description: "Passwords do not match. Please try again.",
+      variant: "destructive"
+    });
+    setIsLoading(false);
+    return;
+  }
 
-    try {
-      const response = await authAPI.register(
-        formData.name,
-        formData.email,
-        formData.password,
-        'user'
-      );
-      
-      localStorage.setItem("user", JSON.stringify(response.user));
-      
-      toast({
-        title: "Account created successfully!",
-        description: "Welcome to RentCar. You can now browse and book cars.",
-      });
-      
-      navigate("/dashboard");
-    } catch (error) {
-      toast({
-        title: "Registration failed",
-        description: error.message || "Please try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  try {
+    const response = await authAPI.register({
+      name: formData.name,
+      email: formData.email,
+      password: formData.password,
+      phone: formData.phone   // optional (backend ignore karega agar use nahi hua)
+    });
 
+    localStorage.setItem("user", JSON.stringify(response.user));
+
+    toast({
+      title: "Account created successfully!",
+      description: "Welcome to RentCar. You can now browse and book cars.",
+    });
+
+    navigate("/dashboard");
+
+  } catch (error: any) {
+    toast({
+      title: "Registration failed",
+      description: error?.response?.data?.message || "Please try again.",
+      variant: "destructive"
+    });
+  } finally {
+    setIsLoading(false);
+  }
+};
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center p-4">
       <div className="w-full max-w-md">
