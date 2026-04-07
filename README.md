@@ -1,81 +1,120 @@
-# Road Trip Booking Platform
+# 🚗 Online Car Rental System
 
-A modern car rental booking platform built with React, TypeScript, and Node.js.
+A full-stack web application for booking rental cars, built using modern web technologies. This platform allows users to browse, book, and manage car rentals efficiently.
 
-## Features
+---
 
-- User authentication and registration
-- Car browsing and booking
-- Admin dashboard for car and user management
-- Responsive design with modern UI components
-- Real-time booking system
+## 🔥 Features
 
-## Technologies Used
+* 👤 User Authentication (Login/Register)
+* 🚘 Browse available cars
+* 📅 Book cars in real-time
+* 🧑‍💼 Admin dashboard for managing cars & users
+* 📱 Responsive UI for mobile & desktop
 
-- **Frontend**: React, TypeScript, Vite, Tailwind CSS, shadcn/ui
-- **Backend**: Node.js, Express
-- **Database**: (Configure as needed)
+---
 
-## Getting Started
+## 🛠️ Tech Stack
 
-### Prerequisites
+### Frontend
 
-- Node.js (v16 or higher)
-- npm or yarn
+* React.js
+* TypeScript
+* Vite
+* Tailwind CSS
 
-### Installation
+### Backend
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd road-trip-booking-platform
-```
+* Node.js
+* Express.js
 
-2. Install dependencies:
-```bash
-# Install frontend dependencies
+### Database
+
+* MongoDB (to be configured)
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+
+git clone https://github.com/Sourabh-Dhote/Online-car-rental.git
+cd Online-car-rental
+
+---
+
+### 2️⃣ Install dependencies
+
+#### Frontend
+
 cd frontend
 npm install
 
-# Install backend dependencies
+#### Backend
+
 cd ../server
 npm install
-```
 
-3. Start the development servers:
+---
 
-```bash
-# Start frontend (from frontend directory)
+### 3️⃣ Run the project
+
+#### Start frontend
+
+cd frontend
 npm run dev
 
-# Start backend (from server directory)
+#### Start backend
+
+cd ../server
 npm start
-```
 
-The frontend will be available at `http://localhost:8080` and the backend at `http://localhost:3000`.
+---
 
-## Project Structure
+## 🌐 Local URLs
 
-```
-road-trip-booking-platform/
-├── frontend/          # React frontend application
-│   ├── src/
-│   │   ├── components/  # Reusable UI components
-│   │   ├── pages/       # Page components
-│   │   ├── services/    # API services
-│   │   └── hooks/       # Custom React hooks
-│   └── public/          # Static assets
-└── server/             # Node.js backend
-    └── index.js        # Express server
-```
+* Frontend: http://localhost:5173
+* Backend: http://localhost:3000
 
-## Contributing
+---
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+## 📁 Project Structure
 
-## License
+Online-Car-Rental/
+├── frontend/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   └── hooks/
+└── server/
+└── index.js
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file in the server folder:
+
+MONGO_URI=your_mongodb_connection_string
+PORT=3000
+
+---
+
+## 🚀 Future Improvements
+
+* Payment Integration 💳
+* Booking history
+* Email notifications
+* Admin analytics dashboard
+
+---
+
+## 📜 License
 
 This project is licensed under the MIT License.
+
+---
+
+## 🙋‍♂️ Author
+
+**Sourabh Dhote**
