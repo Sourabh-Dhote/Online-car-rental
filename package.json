@@ -12,16 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mahidharchowdary2004/Online-Car-Rental.git"
+    "url": "git+https://github.com/Sourabh-Dhote/Online-car-rental.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sourabh Dhote",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Mahidharchowdary2004/Online-Car-Rental/issues"
+    "url": "https://github.com/Sourabh-Dhote/Online-car-rental/issues"
   },
-  "homepage": "https://github.com/Mahidharchowdary2004/Online-Car-Rental#readme",
+  "homepage": "https://github.com/Sourabh-Dhote/Online-car-rental#readme",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "body-parser": "^2.2.2",
