@@ -32,10 +32,6 @@ const Login = () => {
         throw new Error('Invalid response from server');
       }
       
-      if (response.user.status !== 'active') {
-        throw new Error('Your account is not active. Please contact support.');
-      }
-      
       localStorage.setItem("user", JSON.stringify(response.user));
       
       toast({

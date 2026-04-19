@@ -1,5 +1,4 @@
-const BASE_URL = "http://localhost:5001/api"; // ✅ FIX 1: was "API_BASE_URL" (undefined variable) everywhere below
-
+const BASE_URL = "/api";
 // API request helper
 const apiRequest = async (endpoint: string, options: RequestInit = {}) => {
   const url = `${BASE_URL}${endpoint}`; // ✅ FIX 1: was `${API_BASE_URL}${endpoint}` — undefined!

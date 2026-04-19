@@ -62,7 +62,7 @@ const Register = () => {
   } catch (error: any) {
     toast({
       title: "Registration failed",
-      description: error?.response?.data?.message || "Please try again.",
+      description: error?.message || "Please try again.",
       variant: "destructive"
     });
   } finally {

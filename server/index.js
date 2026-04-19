@@ -1,3 +1,6 @@
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -148,6 +151,16 @@ app.get('/api/cars', async (req, res) => {
   }
 });
 
+app.get('/api/cars/:id', async (req, res) => {
+  try {
+    const car = await Car.findById(req.params.id);
+    if (!car) return res.status(404).json({ message: 'Car not found' });
+    res.json(car);
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching car' });
+  }
+});
+
 app.post('/api/cars', async (req, res) => {
   try {
     const car = new Car(req.body);
@@ -196,6 +209,43 @@ app.post('/api/bookings', async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Error creating booking' });
+  }
+});
+
+app.get('/api/bookings', async (req, res) => {
+  try {
+    const bookings = await Booking.find().populate('carId');
+    res.json(bookings);
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching bookings' });
+  }
+});
+
+app.get('/api/bookings/:id', async (req, res) => {
+  try {
+    const booking = await Booking.findById(req.params.id).populate('carId');
+    if (!booking) return res.status(404).json({ message: 'Booking not found' });
+    res.json(booking);
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching booking' });
+  }
+});
+
+app.put('/api/bookings/:id', async (req, res) => {
+  try {
+    const booking = await Booking.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json(booking);
+  } catch (err) {
+    res.status(500).json({ message: 'Error updating booking' });
+  }
+});
+
+app.delete('/api/bookings/:id', async (req, res) => {
+  try {
+    await Booking.findByIdAndDelete(req.params.id);
+    res.json({ message: 'Booking deleted' });
+  } catch (err) {
+    res.status(500).json({ message: 'Error deleting booking' });
   }
 });
 

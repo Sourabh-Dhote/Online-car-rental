@@ -1,5 +1,4 @@
-const BASE_URL = "http://localhost:5001/api"; // your backend port
-
+const BASE_URL = "/api";
 const apiRequest = async (endpoint: string, method: string, body?: any) => {
   try {
     const res = await fetch(`${BASE_URL}${endpoint}`, {

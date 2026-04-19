@@ -14,30 +14,39 @@ const Index = () => {
   const featuredCars = [
     {
       id: 1,
-      name: "Toyota Camry",
-      image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400",
-      pricePerHour: 2500,
+      name: "Maruti Suzuki Swift",
+      image: "/swift.png",
+      pricePerHour: 500,
       seats: 5,
-      transmission: "Automatic",
+      transmission: "Manual",
       rating: 4.8
     },
     {
       id: 2,
-      name: "BMW X5",
-      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400",
-      pricePerHour: 4500,
-      seats: 7,
+      name: "Tata Nexon",
+      image: "/nexon.png",
+      pricePerHour: 700,
+      seats: 5,
       transmission: "Automatic",
       rating: 4.9
     },
     {
       id: 3,
-      name: "Mercedes C-Class",
-      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?w=400",
-      pricePerHour: 3500,
+      name: "Hyundai Creta",
+      image: "/creta.png",
+      pricePerHour: 900,
       seats: 5,
       transmission: "Automatic",
       rating: 4.7
+    },
+    {
+      id: 4,
+      name: "Maruti Suzuki Ertiga",
+      image: "/ertiga.png",
+      pricePerHour: 1000,
+      seats: 7,
+      transmission: "Manual",
+      rating: 4.8
     }
   ];
 
