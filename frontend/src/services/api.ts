@@ -1,14 +1,13 @@
 const BASE_URL = "/api";
 // API request helper
 const apiRequest = async (endpoint: string, options: RequestInit = {}) => {
-  const url = `${BASE_URL}${endpoint}`; // ✅ FIX 1: was `${API_BASE_URL}${endpoint}` — undefined!
+  const url = `${BASE_URL}${endpoint}`;
 
   const token = localStorage.getItem("token");
 
   const config: RequestInit = {
     headers: {
       "Content-Type": "application/json",
-      // ✅ FIX 4: Attach JWT token automatically so protected routes work
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...options.headers,
     },
@@ -24,13 +23,17 @@ const apiRequest = async (endpoint: string, options: RequestInit = {}) => {
     if (!response.ok) {
       const error = await response
         .json()
-        .catch(() => ({ message: "API request failed" }));
-      throw new Error(error.message || "API request failed");
+        .catch(() => ({ message: "Server error. Please try again." }));
+      throw new Error(error.message || "Server error. Please try again.");
     }
     return response.json();
   } catch (error: any) {
     console.error("API request error:", error);
-    throw new Error(error.message || "API request failed");
+    // Distinguish network failure from server-returned errors
+    if (error instanceof TypeError && error.message === "Failed to fetch") {
+      throw new Error("Cannot connect to server. Please make sure the backend is running.");
+    }
+    throw new Error(error.message || "Something went wrong. Please try again.");
   }
 };
 
