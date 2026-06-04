@@ -23,19 +23,19 @@ graph TD
     Client[📱 Frontend Client<br/>React + Vite + Tailwind] -->|HTTP REST APIs| Server[⚙️ Backend Server<br/>Node.js + Express]
     Server -->|Mongoose ODM| DB[(🗄️ Database<br/>MongoDB Atlas)]
     
-    subgraph Frontend Features
+    subgraph Frontend_Features [Frontend Features]
         UI[User Interface]
         State[State Management]
         Auth[JWT Storage]
     end
-    Client -.-> Frontend Features
+    Client -.-> Frontend_Features
     
-    subgraph Backend Services
+    subgraph Backend_Services [Backend Services]
         API[RESTful Endpoints]
         AuthS[Bcrypt Hash & JWT]
         Business[Booking Logic]
     end
-    Server -.-> Backend Services
+    Server -.-> Backend_Services
 ```
 
 ---
