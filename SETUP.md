@@ -20,7 +20,7 @@ npm install
 
 3. Update the MongoDB connection string in `server/index.js` if needed:
 ```javascript
-const MONGODB_URI = 'mongodb+srv://username:paswoard@cluster0.oclfqi3.mongodb.net/carRental?retryWrites=true&w=majority';
+const MONGODB_URI = 'mongodb://localhost:27017/carRental';
 ```
 
 4. Start the backend server:
