@@ -1,7 +1,7 @@
 # 🚗 Online Car Rental System
 
 <div align="center">
-  A full-stack web application built with the MERN stack that provides a seamless platform for users to browse, book, and manage car rentals, featuring role-based admin controls and real-time availability tracking.
+ A full-stack web application built with the MERN stack that provides a seamless platform for users to browse, book, and manage car rentals, featuring role-based admin controls and real-time availability tracking.
 </div>
 
 ---
